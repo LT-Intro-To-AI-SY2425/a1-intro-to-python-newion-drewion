@@ -118,26 +118,18 @@ def median(lst: List[int]) -> float:
         return (lst[halfLength - 1] + lst[halfLength]) / 2.0
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
-    """Given an list of names (strings), play 'duck duck goose' with it, knocking out
-    every third name (wrapping around) until only two names are left.
+    i = 0  # Start at the beginning of the list
 
-    In other words, when you hit the end of the list, wrap around and keep counting from
-    where you were.
+    # Continue until only two names are left
+    while len(lst) > 2:
+        # Determine the index of the name to be removed
+        i = (i + 2) % len(lst)  # Move 2 steps forward (since the count starts at 1)
+        lst.pop(i)  # Remove the name at the current index
 
-    For example, if given this list ['Nathan', 'Sasha', 'Sara', 'Jennie'], you'd first
-    knock out Sara. Then first 'duck' on Jennie, wrap around to 'duck' on Nathan and
-    'goose' on Sasha - knocking him out and leaving only Nathan and Jennie.
+    return lst
 
-    You may assume the list has 3+ names to start
-
-    Args:
-        lst - a list of names (strings)
-
-    Returns:
-        the resulting list after playing duck duck goose
-    """
     
-    
+
 
 
 # this line causes the nested code to be skipped if the file is imported instead of run
